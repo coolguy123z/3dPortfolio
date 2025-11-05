@@ -9,10 +9,11 @@ Title: Robot Playground
 import { useRef } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import { useFrame, useThree } from '@react-three/fiber'
+const gltfUrl = `${import.meta.env.BASE_URL}models/scene.gltf`
 
 const Robot = (props) => {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF(new URL('./scene.gltf', import.meta.url).href)
+  const { nodes, materials, animations } = useGLTF(gltfUrl)
   const { actions } = useAnimations(animations, group)
 
 
@@ -856,6 +857,5 @@ const Robot = (props) => {
   )
 }
 
-
-const gltfUrl = `${import.meta.env.BASE_URL}models/scene.gltf`  // <-- key change
+useGLTF.preload(gltfUrl)
 export default Robot
