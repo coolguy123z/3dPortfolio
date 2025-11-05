@@ -856,5 +856,6 @@ const Robot = (props) => {
   )
 }
 
-useGLTF.preload(new URL('./scene.gltf', import.meta.url).href)
+
+const gltfUrl = `${import.meta.env.BASE_URL}models/scene.gltf`  // <-- key change
 export default Robot

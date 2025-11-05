@@ -7,6 +7,7 @@ import { defineConfig } from "vite"
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   assetsInclude: ["**/*.glb", "**/*.gltf"],
+  base: '/3dPortfolio/',  // set base path for GitHub Pages deployment
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
